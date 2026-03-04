@@ -845,7 +845,7 @@
             renderPrayerTimes();
             const jd = getJordanDate();
             document.getElementById('current-date-gregorian').textContent = formatGregorianDate(jd);
-            document.getElementById('current-date-hijri').textContent = 'رمضان 1447 هـ';
+            document.getElementById('current-date-hijri').textContent = '14 رمضان 1447 هـ';
             document.getElementById('prayer-date-subtitle').textContent = formatGregorianDate(jd);
             computeFastingDuration();
             document.getElementById('api-status').textContent = '⚠ وضع غير متصل - أوقات تقديرية';
@@ -853,9 +853,12 @@
 
         function updateDateDisplay(jd, hijri) {
             const gregorianStr = formatGregorianDate(jd);
+            // تصحيح التاريخ الهجري حسب رؤية الأردن الشرعية (فرق يوم عن الحساب الفلكي)
+            const apiDay = parseInt(hijri.day);
+            const correctedDay = apiDay - 1; // الأردن يعتمد الرؤية = يوم أقل من الحساب
             const hijriStr = hijriOverride
                 ? `${hijriOverride.day} ${hijriOverride.month} ${hijriOverride.year} هـ`
-                : `${hijri.day} ${hijri.month.ar} ${hijri.year} هـ`;
+                : `${correctedDay} ${hijri.month.ar} ${hijri.year} هـ`;
 
             document.getElementById('current-date-gregorian').textContent = gregorianStr;
             document.getElementById('current-date-hijri').textContent = hijriStr;
