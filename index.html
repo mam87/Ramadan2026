@@ -8,7 +8,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Tajawal:wght@200;300;400;500;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* جميع الأنماط كما هي بدون تغيير */
         :root {
             --primary: #0f172a;
             --secondary: #1e293b;
@@ -19,11 +18,7 @@
             --border: rgba(255, 255, 255, 0.1);
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
             font-family: 'Tajawal', sans-serif;
@@ -32,19 +27,9 @@
             overflow-x: hidden;
         }
 
-        .font-amiri {
-            font-family: 'Amiri', serif;
-        }
+        .font-amiri { font-family: 'Amiri', serif; }
 
-        .stars {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: 0;
-        }
+        .stars { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; }
 
         .star {
             position: absolute;
@@ -68,34 +53,17 @@
             filter: drop-shadow(0 0 15px rgba(251, 191, 36, 0.5));
         }
 
-        .lantern-left {
-            top: 10%;
-            left: 5%;
-        }
-
-        .lantern-right {
-            top: 15%;
-            right: 5%;
-            animation-delay: 1s;
-        }
+        .lantern-left { top: 10%; left: 5%; }
+        .lantern-right { top: 15%; right: 5%; animation-delay: 1s; }
 
         @keyframes swing {
             0%, 100% { transform: rotate(-5deg); }
             50% { transform: rotate(5deg); }
         }
 
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-
-        ::-webkit-scrollbar-track {
-            background: var(--primary);
-        }
-
-        ::-webkit-scrollbar-thumb {
-            background: var(--accent);
-            border-radius: 4px;
-        }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: var(--primary); }
+        ::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 4px; }
 
         .glass-card {
             background: var(--glass);
@@ -126,10 +94,7 @@
             gap: 8px;
         }
 
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 20px rgba(251, 191, 36, 0.3);
-        }
+        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 20px rgba(251, 191, 36, 0.3); }
 
         .btn-secondary {
             background: transparent;
@@ -142,17 +107,9 @@
             cursor: pointer;
         }
 
-        .btn-secondary:hover {
-            background: var(--accent);
-            color: var(--primary);
-        }
+        .btn-secondary:hover { background: var(--accent); color: var(--primary); }
 
-        .audio-player {
-            background: rgba(0, 0, 0, 0.3);
-            border-radius: 12px;
-            padding: 16px;
-            border: 1px solid var(--border);
-        }
+        .audio-player { background: rgba(0, 0, 0, 0.3); border-radius: 12px; padding: 16px; border: 1px solid var(--border); }
 
         .progress-bar {
             width: 100%;
@@ -164,12 +121,7 @@
             margin: 10px 0;
         }
 
-        .progress-fill {
-            height: 100%;
-            background: var(--accent);
-            width: 0%;
-            transition: width 0.1s linear;
-        }
+        .progress-fill { height: 100%; background: var(--accent); width: 0%; transition: width 0.1s linear; }
 
         .prayer-row {
             display: flex;
@@ -178,21 +130,8 @@
             border-bottom: 1px solid var(--border);
         }
 
-        .prayer-row:last-child {
-            border-bottom: none;
-        }
-
-        .prayer-name {
-            font-weight: 600;
-            color: var(--accent);
-        }
-
-        .counter-value {
-            font-size: 3rem;
-            font-weight: 800;
-            color: var(--accent);
-            text-shadow: 0 0 20px rgba(251, 191, 36, 0.5);
-        }
+        .prayer-row:last-child { border-bottom: none; }
+        .prayer-name { font-weight: 600; color: var(--accent); }
 
         .grid-responsive {
             display: grid;
@@ -214,9 +153,7 @@
             backdrop-filter: blur(5px);
         }
 
-        .modal.active {
-            display: flex;
-        }
+        .modal.active { display: flex; }
 
         .modal-content {
             background: var(--secondary);
@@ -264,14 +201,8 @@
             max-width: 350px;
         }
 
-        .adhan-notification.show {
-            transform: translateX(0);
-        }
-
-        .adhan-notification i {
-            font-size: 2rem;
-            margin-bottom: 10px;
-        }
+        .adhan-notification.show { transform: translateX(0); }
+        .adhan-notification i { font-size: 2rem; margin-bottom: 10px; }
 
         .toggle-switch {
             position: relative;
@@ -283,9 +214,7 @@
             transition: background 0.3s;
         }
 
-        .toggle-switch.active {
-            background: var(--accent);
-        }
+        .toggle-switch.active { background: var(--accent); }
 
         .toggle-switch::after {
             content: '';
@@ -299,9 +228,7 @@
             transition: transform 0.3s;
         }
 
-        .toggle-switch.active::after {
-            transform: translateX(-30px);
-        }
+        .toggle-switch.active::after { transform: translateX(-30px); }
 
         .developer-credit {
             position: fixed;
@@ -315,16 +242,8 @@
             backdrop-filter: blur(10px);
         }
 
-        .developer-credit h4 {
-            color: var(--accent);
-            font-size: 0.9rem;
-            margin-bottom: 5px;
-        }
-
-        .developer-credit p {
-            font-size: 0.8rem;
-            color: #94a3b8;
-        }
+        .developer-credit h4 { color: var(--accent); font-size: 0.9rem; margin-bottom: 5px; }
+        .developer-credit p { font-size: 0.8rem; color: #94a3b8; }
 
         .loader {
             width: 48px;
@@ -341,13 +260,58 @@
             0% { transform: rotate(0deg); }
             100% { transform: rotate(360deg); }
         }
+
+        .loading-overlay {
+            position: fixed;
+            inset: 0;
+            background: var(--primary);
+            z-index: 9999;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            transition: opacity 0.5s ease;
+        }
+
+        .loading-overlay.hidden { opacity: 0; pointer-events: none; }
+
+        .hijri-badge {
+            background: rgba(251, 191, 36, 0.15);
+            border: 1px solid rgba(251, 191, 36, 0.4);
+            border-radius: 20px;
+            padding: 6px 16px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .live-dot {
+            width: 8px;
+            height: 8px;
+            background: #10b981;
+            border-radius: 50%;
+            animation: pulse-dot 1.5s ease-in-out infinite;
+        }
+
+        @keyframes pulse-dot {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(0.7); }
+        }
     </style>
 </head>
 <body>
 
+    <!-- Loading Screen -->
+    <div class="loading-overlay" id="loading-overlay">
+        <span class="loader"></span>
+        <p class="text-amber-400 text-lg font-bold">جاري تحميل مواقيت الصلاة...</p>
+        <p class="text-slate-400 text-sm">يتم الاتصال بخوادم التوقيت الرسمية</p>
+    </div>
+
     <!-- Background Elements -->
     <div class="stars" id="stars"></div>
-    
+
     <!-- Lanterns -->
     <svg class="lantern lantern-left" viewBox="0 0 100 140">
         <path d="M50 10 L70 30 L70 110 L50 130 L30 110 L30 30 Z" fill="#fbbf24" opacity="0.9"/>
@@ -371,7 +335,7 @@
             <i class="fas fa-mosque"></i>
             <h3 class="text-xl font-bold mb-2">حان وقت الأذان</h3>
             <p id="adhan-prayer-name" class="text-lg mb-3">صلاة المغرب</p>
-            <p class="text-sm opacity-90">المدينة المنورة</p>
+            <p class="text-sm opacity-90">عمّان - الأردن</p>
             <button onclick="stopAdhan()" class="mt-3 bg-white/20 hover:bg-white/30 px-4 py-2 rounded-lg transition">
                 <i class="fas fa-stop ml-2"></i>
                 إيقاف الأذان
@@ -405,20 +369,16 @@
     <!-- Settings Modal -->
     <div id="settings-modal" class="modal">
         <div class="modal-content">
-            <button class="close-modal" onclick="toggleSettings()">
-                <i class="fas fa-times"></i>
-            </button>
+            <button class="close-modal" onclick="toggleSettings()"><i class="fas fa-times"></i></button>
             <h3 class="text-2xl font-bold text-amber-400 mb-6">الإعدادات</h3>
-            
             <div class="space-y-6">
                 <div class="flex justify-between items-center p-4 bg-white/5 rounded-lg">
                     <div>
                         <h4 class="font-bold mb-1">تفعيل الأذان</h4>
-                        <p class="text-sm text-slate-400">تشغيل الأذان تلقائياً من المدينة المنورة</p>
+                        <p class="text-sm text-slate-400">تشغيل الأذان تلقائياً</p>
                     </div>
                     <div class="toggle-switch active" id="adhan-toggle" onclick="toggleAdhan()"></div>
                 </div>
-
                 <div class="flex justify-between items-center p-4 bg-white/5 rounded-lg">
                     <div>
                         <h4 class="font-bold mb-1">صوت الأذان</h4>
@@ -426,12 +386,16 @@
                     </div>
                     <i class="fas fa-volume-high text-amber-400 text-xl"></i>
                 </div>
-
                 <div class="p-4 bg-amber-400/10 rounded-lg border border-amber-400/30">
                     <h4 class="font-bold text-amber-400 mb-2">معلومات المطور</h4>
                     <p class="text-sm">تم تطوير هذا الموقع بإعداد:</p>
                     <p class="text-lg font-bold mt-2">مأمون السعودي</p>
                     <p class="text-sm text-slate-400 mt-1">دعواتكم للمصمم على هذا العمل</p>
+                </div>
+                <div class="p-4 bg-green-500/10 rounded-lg border border-green-500/30">
+                    <h4 class="font-bold text-green-400 mb-1"><i class="fas fa-satellite-dish ml-2"></i>المواقيت مباشرة</h4>
+                    <p class="text-sm text-slate-400">يتم تحديث مواقيت الصلاة تلقائياً كل يوم من خوادم Aladhan API</p>
+                    <p class="text-xs text-green-400 mt-2" id="api-status">✓ متصل بالخادم</p>
                 </div>
             </div>
         </div>
@@ -446,8 +410,7 @@
             <a href="#adhkar" onclick="toggleMobileMenu()" class="hover:text-amber-400">الأذكار</a>
             <a href="#dua" onclick="toggleMobileMenu()" class="hover:text-amber-400">الأدعية</a>
             <button onclick="toggleSettings(); toggleMobileMenu();" class="text-amber-400 hover:text-amber-300 flex items-center gap-2">
-                <i class="fas fa-cog"></i>
-                الإعدادات
+                <i class="fas fa-cog"></i> الإعدادات
             </button>
         </div>
     </div>
@@ -460,10 +423,22 @@
                     رمضان كريم
                 </h2>
                 <p class="text-xl md:text-2xl text-slate-300 mb-4">من الأردن الحبيبة إلى قلوب المسلمين</p>
-                <p class="text-lg text-amber-400 mb-8" id="current-date">الثلاثاء 3 مارس 2026 | 13 رمضان 1447</p>
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-3 mb-8">
+                    <div class="hijri-badge">
+                        <div class="live-dot"></div>
+                        <span class="text-amber-400 font-bold" id="current-date-gregorian">جاري التحميل...</span>
+                    </div>
+                    <div class="hijri-badge">
+                        <i class="fas fa-moon text-amber-400 text-sm"></i>
+                        <span class="text-amber-300 font-bold" id="current-date-hijri">جاري التحميل...</span>
+                    </div>
+                </div>
+                <div class="text-slate-400 text-sm mb-8" id="jordan-clock-display">
+                    <i class="fas fa-clock ml-1"></i>
+                    <span id="live-clock">--:--:--</span>
+                    <span class="mr-2 text-xs">(توقيت عمّان)</span>
+                </div>
             </div>
-
-            <!-- Quick Actions -->
             <div class="flex flex-wrap justify-center gap-4">
                 <button onclick="scrollToSection('quran')" class="btn-primary">
                     <i class="fas fa-book-open"></i>
@@ -480,9 +455,12 @@
     <!-- Prayer Times Section -->
     <section id="prayer-times" class="py-20 relative">
         <div class="container mx-auto px-4">
-            <h2 class="text-4xl font-bold text-center mb-4 text-amber-400">مواقيت الصلاة في الأردن</h2>
-            <p class="text-center text-slate-400 mb-12">اليوم: الثلاثاء 3 مارس 2026 | 13 رمضان 1447</p>
-            
+            <h2 class="text-4xl font-bold text-center mb-2 text-amber-400">مواقيت الصلاة في الأردن</h2>
+            <div class="flex items-center justify-center gap-2 mb-12">
+                <div class="live-dot"></div>
+                <p class="text-slate-400 text-sm" id="prayer-date-subtitle">يتم التحميل...</p>
+            </div>
+
             <div class="grid-responsive">
                 <!-- Prayer Times Card -->
                 <div class="glass-card p-6">
@@ -491,41 +469,21 @@
                         <i class="fas fa-mosque text-3xl text-amber-400"></i>
                     </div>
                     <div id="prayer-times-list">
-                        <div class="prayer-row" data-prayer="fajr" data-time="05:39">
-                            <span class="prayer-name">الفجر</span>
-                            <span class="text-lg font-bold">05:39 ص</span>
-                        </div>
-                        <div class="prayer-row" data-prayer="sunrise" data-time="07:03">
-                            <span class="prayer-name">الشروق</span>
-                            <span class="text-lg">07:03 ص</span>
-                        </div>
-                        <div class="prayer-row" data-prayer="dhuhr" data-time="12:48">
-                            <span class="prayer-name">الظهر</span>
-                            <span class="text-lg font-bold">12:48 م</span>
-                        </div>
-                        <div class="prayer-row" data-prayer="asr" data-time="16:06">
-                            <span class="prayer-name">العصر</span>
-                            <span class="text-lg font-bold">04:06 م</span>
-                        </div>
-                        <div class="prayer-row" data-prayer="maghrib" data-time="18:35">
-                            <span class="prayer-name">المغرب</span>
-                            <span class="text-lg font-bold text-amber-400">06:35 م</span>
-                        </div>
-                        <div class="prayer-row" data-prayer="isha" data-time="20:05">
-                            <span class="prayer-name">العشاء</span>
-                            <span class="text-lg font-bold">08:05 م</span>
+                        <!-- Will be populated by API -->
+                        <div class="flex justify-center py-8">
+                            <span class="loader"></span>
                         </div>
                     </div>
                     <div class="mt-4 p-3 bg-amber-400/10 rounded-lg border border-amber-400/30">
                         <p class="text-sm text-amber-300 text-center">
                             <i class="fas fa-info-circle ml-2"></i>
-                            مدة الصيام اليوم: 12 ساعة و 56 دقيقة
+                            مدة الصيام اليوم: <span id="fasting-duration">جاري الحساب...</span>
                         </p>
                     </div>
                     <div class="mt-4 flex items-center justify-between p-3 bg-green-500/10 rounded-lg border border-green-500/30">
                         <div class="flex items-center gap-2">
                             <i class="fas fa-mosque text-green-400"></i>
-                            <span class="text-sm text-green-300">تنبيه الأذان - المدينة المنورة</span>
+                            <span class="text-sm text-green-300">تنبيه الأذان</span>
                         </div>
                         <div class="toggle-switch active scale-75" id="adhan-toggle-mini" onclick="toggleAdhan()"></div>
                     </div>
@@ -535,22 +493,18 @@
                 <div class="glass-card p-6 flex flex-col justify-center items-center text-center border-amber-400/50">
                     <i class="fas fa-sun text-5xl text-amber-400 mb-4 animate-pulse"></i>
                     <h3 class="text-2xl font-bold mb-2">الوقت المتبقي للإفطار</h3>
-                    <div class="text-4xl font-bold text-amber-400 my-4 font-mono" id="iftar-countdown">00:00:00</div>
-                    <p class="text-slate-300" id="next-prayer-name">حتى أذان المغرب (06:35 م)</p>
-                    <div class="mt-4 text-sm text-amber-400/80">
-                        اللهم لك صمت وعلى رزقك أفطرت
-                    </div>
+                    <div class="text-4xl font-bold text-amber-400 my-4 font-mono" id="iftar-countdown">--:--:--</div>
+                    <p class="text-slate-300" id="next-prayer-name">جاري التحميل...</p>
+                    <div class="mt-4 text-sm text-amber-400/80">اللهم لك صمت وعلى رزقك أفطرت</div>
                 </div>
 
                 <!-- Suhoor Countdown -->
                 <div class="glass-card p-6 flex flex-col justify-center items-center text-center border-blue-400/50">
                     <i class="fas fa-moon text-5xl text-blue-300 mb-4"></i>
                     <h3 class="text-2xl font-bold mb-2">الوقت المتبقي للسحور</h3>
-                    <div class="text-4xl font-bold text-blue-300 my-4 font-mono" id="suhoor-countdown">00:00:00</div>
-                    <p class="text-slate-300" id="next-fajr-name">حتى أذان الفجر (05:39 ص)</p>
-                    <div class="mt-4 text-sm text-blue-300/80">
-                        السحور آخره أفضل
-                    </div>
+                    <div class="text-4xl font-bold text-blue-300 my-4 font-mono" id="suhoor-countdown">--:--:--</div>
+                    <p class="text-slate-300" id="next-fajr-name">جاري التحميل...</p>
+                    <div class="mt-4 text-sm text-blue-300/80">السحور آخره أفضل</div>
                 </div>
             </div>
         </div>
@@ -560,64 +514,34 @@
     <section id="quran" class="py-20 bg-slate-900/50">
         <div class="container mx-auto px-4">
             <h2 class="text-4xl font-bold text-center mb-12 text-amber-400">القرآن الكريم</h2>
-
-            <!-- Reciters Selection -->
             <div class="mb-8 flex flex-wrap justify-center gap-4">
-                <button onclick="changeReciter('alafasy')" class="reciter-btn btn-primary active" data-reciter="alafasy">
-                    مشاري العفاسي
-                </button>
-                <button onclick="changeReciter('husary')" class="reciter-btn btn-secondary" data-reciter="husary">
-                    محمود خليل الحصري
-                </button>
-                <button onclick="changeReciter('abdulbasit')" class="reciter-btn btn-secondary" data-reciter="abdulbasit">
-                    عبد الباسط عبد الصمد
-                </button>
-                <button onclick="changeReciter('minshawi')" class="reciter-btn btn-secondary" data-reciter="minshawi">
-                    محمد صديق المنشاوي
-                </button>
+                <button onclick="changeReciter('alafasy')" class="reciter-btn btn-primary active" data-reciter="alafasy">مشاري العفاسي</button>
+                <button onclick="changeReciter('husary')" class="reciter-btn btn-secondary" data-reciter="husary">محمود خليل الحصري</button>
+                <button onclick="changeReciter('abdulbasit')" class="reciter-btn btn-secondary" data-reciter="abdulbasit">عبد الباسط عبد الصمد</button>
+                <button onclick="changeReciter('minshawi')" class="reciter-btn btn-secondary" data-reciter="minshawi">محمد صديق المنشاوي</button>
             </div>
-
-            <!-- Surah Selection -->
             <div class="glass-card p-6 mb-8">
                 <h3 class="text-xl font-bold mb-4">اختر السورة</h3>
-                <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-3 max-h-64 overflow-y-auto" id="surah-list">
-                    <!-- Surahs will be populated by JavaScript -->
-                </div>
+                <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-3 max-h-64 overflow-y-auto" id="surah-list"></div>
             </div>
-
-            <!-- Audio Player -->
             <div class="glass-card p-6 max-w-3xl mx-auto">
                 <div class="text-center mb-6">
                     <h3 class="text-2xl font-bold text-amber-400 mb-2" id="current-surah-name">اختر سورة للاستماع</h3>
                     <p class="text-slate-400" id="current-reciter-name">مشاري العفاسي</p>
                 </div>
-
                 <div class="audio-player">
                     <audio id="quran-audio" preload="none"></audio>
-                    
                     <div class="flex justify-center gap-6 mb-4">
-                        <button onclick="previousSurah()" class="text-2xl hover:text-amber-400 transition">
-                            <i class="fas fa-step-backward"></i>
-                        </button>
-                        <button onclick="togglePlay()" class="text-4xl text-amber-400 hover:scale-110 transition" id="play-btn">
-                            <i class="fas fa-play-circle"></i>
-                        </button>
-                        <button onclick="nextSurah()" class="text-2xl hover:text-amber-400 transition">
-                            <i class="fas fa-step-forward"></i>
-                        </button>
+                        <button onclick="previousSurah()" class="text-2xl hover:text-amber-400 transition"><i class="fas fa-step-backward"></i></button>
+                        <button onclick="togglePlay()" class="text-4xl text-amber-400 hover:scale-110 transition" id="play-btn"><i class="fas fa-play-circle"></i></button>
+                        <button onclick="nextSurah()" class="text-2xl hover:text-amber-400 transition"><i class="fas fa-step-forward"></i></button>
                     </div>
-
-                    <div class="progress-bar" onclick="seek(event)">
-                        <div class="progress-fill" id="progress-fill"></div>
-                    </div>
-
+                    <div class="progress-bar" onclick="seek(event)"><div class="progress-fill" id="progress-fill"></div></div>
                     <div class="flex justify-between text-sm text-slate-400">
                         <span id="current-time">00:00</span>
                         <span id="duration">00:00</span>
                     </div>
                 </div>
-
-                <!-- Download Button -->
                 <div class="mt-4 text-center">
                     <a id="download-link" href="#" download class="btn-secondary inline-flex items-center gap-2">
                         <i class="fas fa-download"></i>
@@ -632,50 +556,34 @@
     <section id="adhkar" class="py-20">
         <div class="container mx-auto px-4">
             <h2 class="text-4xl font-bold text-center mb-12 text-amber-400">أذكار رمضان</h2>
-
             <div class="grid-responsive">
-                <!-- Morning Adhkar -->
                 <div class="glass-card p-6">
                     <div class="flex items-center gap-3 mb-4">
                         <i class="fas fa-sun text-2xl text-amber-400"></i>
                         <h3 class="text-xl font-bold">أذكار الصباح</h3>
                     </div>
-                    <div class="space-y-4 max-h-96 overflow-y-auto" id="morning-adhkar">
-                        <!-- Content populated by JS -->
-                    </div>
+                    <div class="space-y-4 max-h-96 overflow-y-auto" id="morning-adhkar"></div>
                 </div>
-
-                <!-- Evening Adhkar -->
                 <div class="glass-card p-6">
                     <div class="flex items-center gap-3 mb-4">
                         <i class="fas fa-moon text-2xl text-blue-300"></i>
                         <h3 class="text-xl font-bold">أذكار المساء</h3>
                     </div>
-                    <div class="space-y-4 max-h-96 overflow-y-auto" id="evening-adhkar">
-                        <!-- Content populated by JS -->
-                    </div>
+                    <div class="space-y-4 max-h-96 overflow-y-auto" id="evening-adhkar"></div>
                 </div>
-
-                <!-- Sleep Adhkar -->
                 <div class="glass-card p-6">
                     <div class="flex items-center gap-3 mb-4">
                         <i class="fas fa-bed text-2xl text-purple-400"></i>
                         <h3 class="text-xl font-bold">أذكار النوم</h3>
                     </div>
-                    <div class="space-y-4 max-h-96 overflow-y-auto" id="sleep-adhkar">
-                        <!-- Content populated by JS -->
-                    </div>
+                    <div class="space-y-4 max-h-96 overflow-y-auto" id="sleep-adhkar"></div>
                 </div>
-
-                <!-- Ramadan Specific -->
                 <div class="glass-card p-6">
                     <div class="flex items-center gap-3 mb-4">
                         <i class="fas fa-star text-2xl text-amber-400"></i>
                         <h3 class="text-xl font-bold">أذكار رمضان الخاصة</h3>
                     </div>
-                    <div class="space-y-4 max-h-96 overflow-y-auto" id="ramadan-adhkar">
-                        <!-- Content populated by JS -->
-                    </div>
+                    <div class="space-y-4 max-h-96 overflow-y-auto" id="ramadan-adhkar"></div>
                 </div>
             </div>
         </div>
@@ -685,9 +593,7 @@
     <section id="dua" class="py-20 bg-slate-900/50">
         <div class="container mx-auto px-4">
             <h2 class="text-4xl font-bold text-center mb-12 text-amber-400">أدعية مستحبة في رمضان</h2>
-
             <div class="grid-responsive">
-                <!-- Dua Cards -->
                 <div class="glass-card p-6 hover:scale-105 transition-transform cursor-pointer" onclick="showDuaModal(0)">
                     <div class="text-center">
                         <i class="fas fa-hand-holding-heart text-4xl text-amber-400 mb-4"></i>
@@ -695,7 +601,6 @@
                         <p class="text-slate-400">اللهم أعني على صيامه وقيامه...</p>
                     </div>
                 </div>
-
                 <div class="glass-card p-6 hover:scale-105 transition-transform cursor-pointer" onclick="showDuaModal(1)">
                     <div class="text-center">
                         <i class="fas fa-utensils text-4xl text-amber-400 mb-4"></i>
@@ -703,7 +608,6 @@
                         <p class="text-slate-400">اللهم لك صمت وعلى رزقك أفطرت...</p>
                     </div>
                 </div>
-
                 <div class="glass-card p-6 hover:scale-105 transition-transform cursor-pointer" onclick="showDuaModal(2)">
                     <div class="text-center">
                         <i class="fas fa-mosque text-4xl text-amber-400 mb-4"></i>
@@ -711,7 +615,6 @@
                         <p class="text-slate-400">اللهم إنك عفو كريم تحب العفو فاعف عني...</p>
                     </div>
                 </div>
-
                 <div class="glass-card p-6 hover:scale-105 transition-transform cursor-pointer" onclick="showDuaModal(3)">
                     <div class="text-center">
                         <i class="fas fa-heart text-4xl text-amber-400 mb-4"></i>
@@ -727,20 +630,12 @@
     <footer class="bg-slate-900 border-t border-white/10 py-12">
         <div class="container mx-auto px-4 text-center">
             <div class="flex justify-center gap-6 mb-6">
-                <a href="#" class="text-2xl text-slate-400 hover:text-amber-400 transition">
-                    <i class="fab fa-facebook"></i>
-                </a>
-                <a href="#" class="text-2xl text-slate-400 hover:text-amber-400 transition">
-                    <i class="fab fa-twitter"></i>
-                </a>
-                <a href="#" class="text-2xl text-slate-400 hover:text-amber-400 transition">
-                    <i class="fab fa-instagram"></i>
-                </a>
-                <a href="#" class="text-2xl text-slate-400 hover:text-amber-400 transition">
-                    <i class="fab fa-telegram"></i>
-                </a>
+                <a href="#" class="text-2xl text-slate-400 hover:text-amber-400 transition"><i class="fab fa-facebook"></i></a>
+                <a href="#" class="text-2xl text-slate-400 hover:text-amber-400 transition"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="text-2xl text-slate-400 hover:text-amber-400 transition"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="text-2xl text-slate-400 hover:text-amber-400 transition"><i class="fab fa-telegram"></i></a>
             </div>
-            <p class="text-slate-400 mb-2">رمضان في الأردن - 2026</p>
+            <p class="text-slate-400 mb-2">رمضان في الأردن</p>
             <div class="mt-4 p-4 bg-amber-400/10 rounded-lg inline-block border border-amber-400/30">
                 <p class="text-amber-400 font-bold mb-1">إعداد: مأمون السعودي</p>
                 <p class="text-slate-400 text-sm">دعواتكم للمصمم على هذا العمل</p>
@@ -748,7 +643,6 @@
         </div>
     </footer>
 
-    <!-- Developer Credit Floating -->
     <div class="developer-credit hidden md:block">
         <h4><i class="fas fa-code ml-2"></i>إعداد</h4>
         <p class="font-bold text-white">مأمون السعودي</p>
@@ -758,9 +652,7 @@
     <!-- Dua Modal -->
     <div id="dua-modal" class="modal">
         <div class="modal-content">
-            <button class="close-modal" onclick="closeDuaModal()">
-                <i class="fas fa-times"></i>
-            </button>
+            <button class="close-modal" onclick="closeDuaModal()"><i class="fas fa-times"></i></button>
             <h3 class="text-2xl font-bold text-amber-400 mb-4" id="modal-title"></h3>
             <div class="font-amiri text-xl leading-loose text-center mb-6" id="modal-content"></div>
             <div class="text-slate-400 text-center" id="modal-translation"></div>
@@ -768,269 +660,350 @@
     </div>
 
     <script>
-        // إنشاء النجوم في الخلفية
-        function createStars() {
-            const starsContainer = document.getElementById('stars');
-            const count = 100;
-            
-            for (let i = 0; i < count; i++) {
-                const star = document.createElement('div');
-                star.className = 'star';
-                star.style.left = Math.random() * 100 + '%';
-                star.style.top = Math.random() * 100 + '%';
-                star.style.width = Math.random() * 3 + 'px';
-                star.style.height = star.style.width;
-                star.style.setProperty('--duration', (Math.random() * 3 + 2) + 's');
-                star.style.setProperty('--opacity', Math.random() * 0.7 + 0.3);
-                starsContainer.appendChild(star);
-            }
+        // ============================================================
+        //  الإعدادات الأساسية
+        // ============================================================
+
+        // توقيت عمّان: UTC+3
+        const JORDAN_UTC_OFFSET = 3;
+
+        // الحصول على الوقت الحالي في الأردن
+        function getJordanDate() {
+            const now = new Date();
+            // نحسب التوقيت الأردني بدقة بغض النظر عن توقيت المتصفح
+            const utcMs = now.getTime() + now.getTimezoneOffset() * 60000;
+            return new Date(utcMs + JORDAN_UTC_OFFSET * 3600000);
         }
 
-        // إعدادات الأذان
+        // ============================================================
+        //  التاريخ والساعة المباشرة
+        // ============================================================
+
+        const gregorianMonths = ['يناير','فبراير','مارس','أبريل','مايو','يونيو','يوليو','أغسطس','سبتمبر','أكتوبر','نوفمبر','ديسمبر'];
+        const weekDays = ['الأحد','الاثنين','الثلاثاء','الأربعاء','الخميس','الجمعة','السبت'];
+
+        function updateLiveClock() {
+            const jd = getJordanDate();
+            const h = String(jd.getHours()).padStart(2, '0');
+            const m = String(jd.getMinutes()).padStart(2, '0');
+            const s = String(jd.getSeconds()).padStart(2, '0');
+            document.getElementById('live-clock').textContent = `${h}:${m}:${s}`;
+        }
+
+        function formatGregorianDate(d) {
+            return `${weekDays[d.getDay()]} ${d.getDate()} ${gregorianMonths[d.getMonth()]} ${d.getFullYear()}`;
+        }
+
+        // ============================================================
+        //  مواقيت الصلاة - Aladhan API (لا تحتاج مفتاح)
+        // ============================================================
+
+        let prayerTimes = null; // سيُملأ من API
         let adhanEnabled = true;
         let adhanAudio = null;
         let lastPlayedPrayer = null;
+        let todayDateStr = ''; // YYYY-MM-DD بتوقيت الأردن
 
-        // روابط الأذان من المدينة المنورة
-        const adhanUrls = {
-            fajr: 'https://download.tvquran.com/download/recitations/10/10-001.mp3',
-            dhuhr: 'https://download.tvquran.com/download/recitations/10/10-002.mp3',
-            asr: 'https://download.tvquran.com/download/recitations/10/10-003.mp3',
-            maghrib: 'https://download.tvquran.com/download/recitations/10/10-004.mp3',
-            isha: 'https://download.tvquran.com/download/recitations/10/10-005.mp3'
-        };
-
-        const prayerNames = {
+        const prayerNamesAr = {
             fajr: 'الفجر',
+            sunrise: 'الشروق',
             dhuhr: 'الظهر',
             asr: 'العصر',
             maghrib: 'المغرب',
             isha: 'العشاء'
         };
 
-        function toggleAdhan() {
-            adhanEnabled = !adhanEnabled;
-            const toggles = document.querySelectorAll('[id^="adhan-toggle"]');
-            toggles.forEach(toggle => {
-                if (adhanEnabled) {
-                    toggle.classList.add('active');
+        // تحويل "HH:MM" إلى { hour, minute }
+        function parseTime(timeStr) {
+            const parts = timeStr.split(':');
+            return { hour: parseInt(parts[0]), minute: parseInt(parts[1]) };
+        }
+
+        // تحويل { hour, minute } إلى عرض "12:00 م/ص"
+        function formatArabicTime(h, m) {
+            const period = h >= 12 ? 'م' : 'ص';
+            const h12 = h % 12 || 12;
+            return `${h12}:${String(m).padStart(2,'0')} ${period}`;
+        }
+
+        async function fetchPrayerTimes() {
+            const jd = getJordanDate();
+            const day   = jd.getDate();
+            const month = jd.getMonth() + 1;
+            const year  = jd.getFullYear();
+            todayDateStr = `${year}-${String(month).padStart(2,'0')}-${String(day).padStart(2,'0')}`;
+
+            // Aladhan API - Amman, Jordan - Method 3 (Muslim World League)
+            const url = `https://api.aladhan.com/v1/timingsByCity/${day}-${month}-${year}?city=Amman&country=Jordan&method=3`;
+
+            try {
+                const res = await fetch(url);
+                const data = await res.json();
+
+                if (data.code === 200) {
+                    const t = data.data.timings;
+                    const hijri = data.data.date.hijri;
+
+                    prayerTimes = {
+                        fajr:    parseTime(t.Fajr),
+                        sunrise: parseTime(t.Sunrise),
+                        dhuhr:   parseTime(t.Dhuhr),
+                        asr:     parseTime(t.Asr),
+                        maghrib: parseTime(t.Maghrib),
+                        isha:    parseTime(t.Isha)
+                    };
+
+                    // تحديث واجهة المستخدم
+                    renderPrayerTimes();
+                    updateDateDisplay(jd, hijri);
+                    computeFastingDuration();
+                    document.getElementById('api-status').textContent = '✓ متصل بالخادم - ' + todayDateStr;
                 } else {
-                    toggle.classList.remove('active');
+                    throw new Error('API error');
                 }
-            });
-            
-            localStorage.setItem('adhanEnabled', adhanEnabled);
-        }
-
-        function toggleSettings() {
-            const modal = document.getElementById('settings-modal');
-            modal.classList.toggle('active');
-        }
-
-        function playAdhan(prayer) {
-            if (!adhanEnabled || lastPlayedPrayer === prayer) return;
-            
-            if (adhanAudio) {
-                adhanAudio.pause();
-                adhanAudio = null;
+            } catch (err) {
+                console.warn('Prayer API failed, using fallback times', err);
+                useFallbackTimes();
+            } finally {
+                // إخفاء شاشة التحميل
+                const overlay = document.getElementById('loading-overlay');
+                overlay.classList.add('hidden');
+                setTimeout(() => overlay.style.display = 'none', 600);
             }
+        }
 
-            lastPlayedPrayer = prayer;
-            
-            const notification = document.getElementById('adhan-notification');
-            document.getElementById('adhan-prayer-name').textContent = `صلاة ${prayerNames[prayer]}`;
-            notification.classList.add('show');
-
-            adhanAudio = new Audio(adhanUrls[prayer]);
-            adhanAudio.play().catch(e => console.log('Audio play failed:', e));
-            
-            adhanAudio.onended = () => {
-                setTimeout(() => {
-                    notification.classList.remove('show');
-                }, 5000);
+        // أوقات احتياطية في حال فشل API
+        function useFallbackTimes() {
+            prayerTimes = {
+                fajr:    { hour: 5,  minute: 39 },
+                sunrise: { hour: 7,  minute: 3  },
+                dhuhr:   { hour: 12, minute: 48 },
+                asr:     { hour: 16, minute: 6  },
+                maghrib: { hour: 18, minute: 35 },
+                isha:    { hour: 20, minute: 5  }
             };
+            renderPrayerTimes();
+            const jd = getJordanDate();
+            document.getElementById('current-date-gregorian').textContent = formatGregorianDate(jd);
+            document.getElementById('current-date-hijri').textContent = 'رمضان 1447 هـ';
+            document.getElementById('prayer-date-subtitle').textContent = formatGregorianDate(jd);
+            computeFastingDuration();
+            document.getElementById('api-status').textContent = '⚠ وضع غير متصل - أوقات تقديرية';
         }
 
-        function stopAdhan() {
-            if (adhanAudio) {
-                adhanAudio.pause();
-                adhanAudio = null;
-            }
-            document.getElementById('adhan-notification').classList.remove('show');
+        function updateDateDisplay(jd, hijri) {
+            const gregorianStr = formatGregorianDate(jd);
+            const hijriStr = `${hijri.day} ${hijri.month.ar} ${hijri.year} هـ`;
+
+            document.getElementById('current-date-gregorian').textContent = gregorianStr;
+            document.getElementById('current-date-hijri').textContent = hijriStr;
+            document.getElementById('prayer-date-subtitle').textContent = `${gregorianStr} | ${hijriStr}`;
         }
 
-        // أوقات الصلاة لعمّان الأردن (محاكاة ليوم 3 مارس 2026)
-        const prayerTimes = {
-            fajr: { hour: 5, minute: 39 },
-            sunrise: { hour: 7, minute: 3 },
-            dhuhr: { hour: 12, minute: 48 },
-            asr: { hour: 16, minute: 6 },
-            maghrib: { hour: 18, minute: 35 },
-            isha: { hour: 20, minute: 5 }
-        };
+        function renderPrayerTimes() {
+            const container = document.getElementById('prayer-times-list');
+            const prayers = [
+                { key: 'fajr',    label: 'الفجر',   bold: true },
+                { key: 'sunrise', label: 'الشروق',  bold: false },
+                { key: 'dhuhr',   label: 'الظهر',   bold: true },
+                { key: 'asr',     label: 'العصر',   bold: true },
+                { key: 'maghrib', label: 'المغرب',  bold: true, highlight: true },
+                { key: 'isha',    label: 'العشاء',  bold: true },
+            ];
 
-        function timeToMinutes(hours, minutes) {
-            return hours * 60 + minutes;
+            container.innerHTML = prayers.map(p => {
+                const t = prayerTimes[p.key];
+                const timeStr = formatArabicTime(t.hour, t.minute);
+                const boldClass = p.bold ? 'font-bold' : '';
+                const colorClass = p.highlight ? 'text-amber-400' : '';
+                return `
+                    <div class="prayer-row" data-prayer="${p.key}">
+                        <span class="prayer-name">${p.label}</span>
+                        <span class="text-lg ${boldClass} ${colorClass}">${timeStr}</span>
+                    </div>
+                `;
+            }).join('');
+
+            // تحديث الصلاة الحالية فوراً
+            highlightCurrentPrayer();
         }
 
-        // تحديد الصلاة الحالية من بين الصلوات الخمس فقط (نستثني الشروق)
-        function getCurrentPrayer() {
-            const now = new Date();
-            const currentMinutes = now.getHours() * 60 + now.getMinutes();
-            
-            // قائمة الصلوات بالترتيب
-            const prayers = ['fajr', 'dhuhr', 'asr', 'maghrib', 'isha'];
-            let current = null;
-            
-            for (let i = 0; i < prayers.length; i++) {
-                const prayer = prayers[i];
-                const prayerMinutes = timeToMinutes(prayerTimes[prayer].hour, prayerTimes[prayer].minute);
-                
-                if (currentMinutes >= prayerMinutes) {
-                    current = prayer;
-                } else {
-                    break; // بمجرد أن نجد وقت صلاة لم يحن بعد، نتوقف
-                }
-            }
-            
-            return current; // قد يكون null إذا لم يحن وقت أي صلاة بعد (قبل الفجر)
+        function computeFastingDuration() {
+            if (!prayerTimes) return;
+            const fajr    = prayerTimes.fajr.hour * 60 + prayerTimes.fajr.minute;
+            const maghrib = prayerTimes.maghrib.hour * 60 + prayerTimes.maghrib.minute;
+            const diff    = maghrib - fajr;
+            const h = Math.floor(diff / 60);
+            const m = diff % 60;
+            document.getElementById('fasting-duration').textContent = `${h} ساعة و ${m} دقيقة`;
+            document.getElementById('next-prayer-name').innerHTML = `حتى أذان المغرب (${formatArabicTime(prayerTimes.maghrib.hour, prayerTimes.maghrib.minute)})`;
+            document.getElementById('next-fajr-name').innerHTML = `حتى أذان الفجر (${formatArabicTime(prayerTimes.fajr.hour, prayerTimes.fajr.minute)})`;
         }
 
-        // تحديث التمييز للصلاة الحالية والتحقق من الأذان
+        // ============================================================
+        //  الصلاة الحالية والأذان
+        // ============================================================
+
+        function timeToSeconds(h, m) { return h * 3600 + m * 60; }
+
         function highlightCurrentPrayer() {
-            const now = new Date();
-            const currentMinutes = now.getHours() * 60 + now.getMinutes();
-            const currentSeconds = now.getSeconds();
-            
+            if (!prayerTimes) return;
+            const jd = getJordanDate();
+            const nowSeconds = jd.getHours() * 3600 + jd.getMinutes() * 60 + jd.getSeconds();
+            const nowMinutes = jd.getHours() * 60 + jd.getMinutes();
+            const nowSec = jd.getSeconds();
+
             const prayers = ['fajr', 'dhuhr', 'asr', 'maghrib', 'isha'];
             let currentPrayer = null;
-            
-            for (let i = 0; i < prayers.length; i++) {
-                const prayer = prayers[i];
-                const prayerMinutes = timeToMinutes(prayerTimes[prayer].hour, prayerTimes[prayer].minute);
-                
-                if (currentMinutes >= prayerMinutes) {
-                    currentPrayer = prayer;
-                }
-            }
-            
-            // إزالة التمييز السابق
-            document.querySelectorAll('.prayer-row').forEach(row => {
-                row.classList.remove('current-prayer');
-            });
-            
-            // تمييز الصلاة الحالية
-            if (currentPrayer) {
-                const currentRow = document.querySelector(`[data-prayer="${currentPrayer}"]`);
-                if (currentRow) {
-                    currentRow.classList.add('current-prayer');
-                }
+
+            for (const pr of prayers) {
+                const pm = prayerTimes[pr].hour * 60 + prayerTimes[pr].minute;
+                if (nowMinutes >= pm) currentPrayer = pr;
             }
 
-            // التحقق من حلول وقت الأذان (عند الدقيقة 0 ثانية)
-            if (currentSeconds === 0 && adhanEnabled) {
-                for (let prayer in prayerTimes) {
-                    if (prayer === 'sunrise') continue; // لا أذان للشروق
-                    const pt = prayerTimes[prayer];
-                    if (currentMinutes === timeToMinutes(pt.hour, pt.minute)) {
-                        playAdhan(prayer);
+            document.querySelectorAll('.prayer-row').forEach(r => r.classList.remove('current-prayer'));
+            if (currentPrayer) {
+                const row = document.querySelector(`[data-prayer="${currentPrayer}"]`);
+                if (row) row.classList.add('current-prayer');
+            }
+
+            // تشغيل الأذان عند حلول الوقت بالضبط (الثانية 0)
+            if (nowSec === 0 && adhanEnabled) {
+                for (const pr of prayers) {
+                    const pt = prayerTimes[pr];
+                    if (nowMinutes === pt.hour * 60 + pt.minute) {
+                        playAdhan(pr);
                         break;
                     }
                 }
             }
         }
 
-        // تحديث العد التنازلي للإفطار (المغرب) والسحور (الفجر)
+        // ============================================================
+        //  العد التنازلي (بتوقيت الأردن الحقيقي)
+        // ============================================================
+
         function updatePrayerCountdowns() {
-            const now = new Date();
-            const currentHour = now.getHours();
-            const currentMinute = now.getMinutes();
-            const currentSecond = now.getSeconds();
-            const currentTime = currentHour * 3600 + currentMinute * 60 + currentSecond;
+            if (!prayerTimes) return;
+            const jd = getJordanDate();
+            const nowSec = jd.getHours() * 3600 + jd.getMinutes() * 60 + jd.getSeconds();
 
-            // الإفطار = المغرب (18:35)
-            const iftarTime = prayerTimes.maghrib.hour * 3600 + prayerTimes.maghrib.minute * 60;
-            let iftarDiff = iftarTime - currentTime;
-            if (iftarDiff < 0) iftarDiff += 24 * 3600; // إذا فات وقت المغرب، نعد للغد
-            
-            const iftarHours = Math.floor(iftarDiff / 3600);
-            const iftarMinutes = Math.floor((iftarDiff % 3600) / 60);
-            const iftarSeconds = iftarDiff % 60;
-            document.getElementById('iftar-countdown').textContent = 
-                `${String(iftarHours).padStart(2, '0')}:${String(iftarMinutes).padStart(2, '0')}:${String(iftarSeconds).padStart(2, '0')}`;
+            // الإفطار = المغرب
+            const iftarSec = timeToSeconds(prayerTimes.maghrib.hour, prayerTimes.maghrib.minute);
+            let diffIftar = iftarSec - nowSec;
+            if (diffIftar < 0) diffIftar += 86400;
+            document.getElementById('iftar-countdown').textContent = secToHMS(diffIftar);
 
-            // السحور = الفجر (5:39)
-            const fajrTime = prayerTimes.fajr.hour * 3600 + prayerTimes.fajr.minute * 60;
-            let fajrDiff = fajrTime - currentTime;
-            if (fajrDiff < 0) fajrDiff += 24 * 3600;
-            
-            const fajrHours = Math.floor(fajrDiff / 3600);
-            const fajrMinutes = Math.floor((fajrDiff % 3600) / 60);
-            const fajrSeconds = fajrDiff % 60;
-            document.getElementById('suhoor-countdown').textContent = 
-                `${String(fajrHours).padStart(2, '0')}:${String(fajrMinutes).padStart(2, '0')}:${String(fajrSeconds).padStart(2, '0')}`;
+            // السحور = الفجر
+            const fajrSec = timeToSeconds(prayerTimes.fajr.hour, prayerTimes.fajr.minute);
+            let diffFajr = fajrSec - nowSec;
+            if (diffFajr < 0) diffFajr += 86400;
+            document.getElementById('suhoor-countdown').textContent = secToHMS(diffFajr);
+        }
 
-            // تحديث اسم الصلاة القادمة في البطاقات
-            const nextPrayer = getNextPrayer();
-            if (nextPrayer) {
-                document.getElementById('next-prayer-name').innerHTML = `حتى أذان ${prayerNames[nextPrayer]} (${formatPrayerTime(nextPrayer)})`;
-                // بالنسبة للسحور، الصلاة القادمة هي الفجر دائماً (إذا لم يحن وقتها)
-                if (nextPrayer !== 'fajr') {
-                    document.getElementById('next-fajr-name').innerHTML = `حتى أذان الفجر (${formatPrayerTime('fajr')})`;
-                } else {
-                    document.getElementById('next-fajr-name').innerHTML = `حتى أذان الفجر (${formatPrayerTime('fajr')})`;
-                }
+        function secToHMS(sec) {
+            const h = Math.floor(sec / 3600);
+            const m = Math.floor((sec % 3600) / 60);
+            const s = sec % 60;
+            return `${String(h).padStart(2,'0')}:${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`;
+        }
+
+        // ============================================================
+        //  فحص تغيّر اليوم (لإعادة تحميل مواقيت اليوم الجديد)
+        // ============================================================
+
+        function checkDayChange() {
+            const jd = getJordanDate();
+            const newDateStr = `${jd.getFullYear()}-${String(jd.getMonth()+1).padStart(2,'0')}-${String(jd.getDate()).padStart(2,'0')}`;
+            if (todayDateStr && newDateStr !== todayDateStr) {
+                // تغيّر اليوم - أعد تحميل المواقيت
+                fetchPrayerTimes();
             }
         }
 
-        // الحصول على الصلاة القادمة (من بين الخمس)
-        function getNextPrayer() {
-            const now = new Date();
-            const currentMinutes = now.getHours() * 60 + now.getMinutes();
-            const prayers = ['fajr', 'dhuhr', 'asr', 'maghrib', 'isha'];
-            
-            for (let i = 0; i < prayers.length; i++) {
-                const prayer = prayers[i];
-                const prayerMinutes = timeToMinutes(prayerTimes[prayer].hour, prayerTimes[prayer].minute);
-                if (currentMinutes < prayerMinutes) {
-                    return prayer;
-                }
+        // ============================================================
+        //  الأذان
+        // ============================================================
+
+        const adhanUrls = {
+            fajr:    'https://download.tvquran.com/download/recitations/10/10-001.mp3',
+            dhuhr:   'https://download.tvquran.com/download/recitations/10/10-002.mp3',
+            asr:     'https://download.tvquran.com/download/recitations/10/10-003.mp3',
+            maghrib: 'https://download.tvquran.com/download/recitations/10/10-004.mp3',
+            isha:    'https://download.tvquran.com/download/recitations/10/10-005.mp3'
+        };
+
+        function playAdhan(prayer) {
+            if (!adhanEnabled || lastPlayedPrayer === prayer) return;
+            if (adhanAudio) { adhanAudio.pause(); adhanAudio = null; }
+            lastPlayedPrayer = prayer;
+
+            const notif = document.getElementById('adhan-notification');
+            document.getElementById('adhan-prayer-name').textContent = `صلاة ${prayerNamesAr[prayer]}`;
+            notif.classList.add('show');
+
+            adhanAudio = new Audio(adhanUrls[prayer]);
+            adhanAudio.play().catch(e => console.log('Audio play failed:', e));
+            adhanAudio.onended = () => setTimeout(() => notif.classList.remove('show'), 5000);
+        }
+
+        function stopAdhan() {
+            if (adhanAudio) { adhanAudio.pause(); adhanAudio = null; }
+            document.getElementById('adhan-notification').classList.remove('show');
+        }
+
+        function toggleAdhan() {
+            adhanEnabled = !adhanEnabled;
+            document.querySelectorAll('[id^="adhan-toggle"]').forEach(t => {
+                adhanEnabled ? t.classList.add('active') : t.classList.remove('active');
+            });
+            try { localStorage.setItem('adhanEnabled', adhanEnabled); } catch(e) {}
+        }
+
+        // ============================================================
+        //  النجوم
+        // ============================================================
+
+        function createStars() {
+            const container = document.getElementById('stars');
+            for (let i = 0; i < 100; i++) {
+                const s = document.createElement('div');
+                s.className = 'star';
+                s.style.left = Math.random() * 100 + '%';
+                s.style.top  = Math.random() * 100 + '%';
+                const size = Math.random() * 3 + 'px';
+                s.style.width = size; s.style.height = size;
+                s.style.setProperty('--duration', (Math.random() * 3 + 2) + 's');
+                s.style.setProperty('--opacity', Math.random() * 0.7 + 0.3);
+                container.appendChild(s);
             }
-            // إذا مرت جميع الصلوات، فالصلاة القادمة هي فجر الغد
-            return 'fajr';
         }
 
-        function formatPrayerTime(prayer) {
-            const pt = prayerTimes[prayer];
-            const hours = pt.hour;
-            const minutes = pt.minute;
-            const period = hours >= 12 ? 'م' : 'ص';
-            const hour12 = hours % 12 || 12;
-            return `${hour12}:${String(minutes).padStart(2, '0')} ${period}`;
-        }
+        // ============================================================
+        //  القرآن الكريم
+        // ============================================================
 
-        // بيانات القرآن
         const reciters = {
-            alafasy: { name: 'مشاري العفاسي', server: 'https://server8.mp3quran.net/afs/' },
-            husary: { name: 'محمود خليل الحصري', server: 'https://server13.mp3quran.net/husr/' },
-            abdulbasit: { name: 'عبد الباسط عبد الصمد', server: 'https://server7.mp3quran.net/basit/' },
-            minshawi: { name: 'محمد صديق المنشاوي', server: 'https://server10.mp3quran.net/minsh/' }
+            alafasy:    { name: 'مشاري العفاسي',           server: 'https://server8.mp3quran.net/afs/' },
+            husary:     { name: 'محمود خليل الحصري',       server: 'https://server13.mp3quran.net/husr/' },
+            abdulbasit: { name: 'عبد الباسط عبد الصمد',   server: 'https://server7.mp3quran.net/basit/' },
+            minshawi:   { name: 'محمد صديق المنشاوي',      server: 'https://server10.mp3quran.net/minsh/' }
         };
 
         const surahs = [
-            { id: 1, name: 'الفاتحة', file: '001.mp3' },
-            { id: 2, name: 'البقرة', file: '002.mp3' },
-            { id: 3, name: 'آل عمران', file: '003.mp3' },
-            { id: 4, name: 'النساء', file: '004.mp3' },
-            { id: 5, name: 'المائدة', file: '005.mp3' },
-            { id: 18, name: 'الكهف', file: '018.mp3' },
-            { id: 36, name: 'يس', file: '036.mp3' },
-            { id: 55, name: 'الرحمن', file: '055.mp3' },
-            { id: 56, name: 'الواقعة', file: '056.mp3' },
-            { id: 67, name: 'الملك', file: '067.mp3' },
-            { id: 112, name: 'الإخلاص', file: '112.mp3' },
-            { id: 113, name: 'الفلق', file: '113.mp3' },
-            { id: 114, name: 'الناس', file: '114.mp3' }
+            { id: 1,   name: 'الفاتحة',  file: '001.mp3' },
+            { id: 2,   name: 'البقرة',   file: '002.mp3' },
+            { id: 3,   name: 'آل عمران', file: '003.mp3' },
+            { id: 4,   name: 'النساء',   file: '004.mp3' },
+            { id: 5,   name: 'المائدة',  file: '005.mp3' },
+            { id: 18,  name: 'الكهف',    file: '018.mp3' },
+            { id: 36,  name: 'يس',       file: '036.mp3' },
+            { id: 55,  name: 'الرحمن',   file: '055.mp3' },
+            { id: 56,  name: 'الواقعة',  file: '056.mp3' },
+            { id: 67,  name: 'الملك',    file: '067.mp3' },
+            { id: 112, name: 'الإخلاص',  file: '112.mp3' },
+            { id: 113, name: 'الفلق',    file: '113.mp3' },
+            { id: 114, name: 'الناس',    file: '114.mp3' }
         ];
 
         let currentReciter = 'alafasy';
@@ -1041,116 +1014,76 @@
         function populateSurahs() {
             const container = document.getElementById('surah-list');
             container.innerHTML = '';
-            
-            surahs.forEach((surah, index) => {
+            surahs.forEach((s, i) => {
                 const btn = document.createElement('button');
-                btn.className = `p-3 rounded-lg border border-white/10 hover:bg-amber-400/20 hover:border-amber-400 transition text-sm ${index === currentSurahIndex ? 'bg-amber-400/20 border-amber-400' : ''}`;
-                btn.textContent = surah.name;
-                btn.onclick = () => selectSurah(index);
+                btn.className = `p-3 rounded-lg border border-white/10 hover:bg-amber-400/20 hover:border-amber-400 transition text-sm ${i === currentSurahIndex ? 'bg-amber-400/20 border-amber-400' : ''}`;
+                btn.textContent = s.name;
+                btn.onclick = () => selectSurah(i);
                 container.appendChild(btn);
             });
         }
 
-        function changeReciter(reciterKey) {
-            currentReciter = reciterKey;
-            document.querySelectorAll('.reciter-btn').forEach(btn => {
-                btn.classList.remove('btn-primary', 'active');
-                btn.classList.add('btn-secondary');
-            });
-            document.querySelector(`[data-reciter="${reciterKey}"]`).classList.remove('btn-secondary');
-            document.querySelector(`[data-reciter="${reciterKey}"]`).classList.add('btn-primary', 'active');
-            
-            document.getElementById('current-reciter-name').textContent = reciters[reciterKey].name;
-            
-            if (isPlaying) {
-                loadAndPlay();
-            }
+        function changeReciter(key) {
+            currentReciter = key;
+            document.querySelectorAll('.reciter-btn').forEach(b => { b.classList.remove('btn-primary','active'); b.classList.add('btn-secondary'); });
+            const active = document.querySelector(`[data-reciter="${key}"]`);
+            active.classList.remove('btn-secondary'); active.classList.add('btn-primary','active');
+            document.getElementById('current-reciter-name').textContent = reciters[key].name;
+            if (isPlaying) loadAndPlay();
         }
 
-        function selectSurah(index) {
-            currentSurahIndex = index;
+        function selectSurah(i) {
+            currentSurahIndex = i;
             populateSurahs();
-            document.getElementById('current-surah-name').textContent = surahs[index].name;
+            document.getElementById('current-surah-name').textContent = surahs[i].name;
             loadAndPlay();
         }
 
         function loadAndPlay() {
-            const surah = surahs[currentSurahIndex];
-            const reciter = reciters[currentReciter];
-            audio.src = reciter.server + surah.file;
-            audio.play();
-            isPlaying = true;
-            updatePlayButton();
-            updateDownloadLink();
+            audio.src = reciters[currentReciter].server + surahs[currentSurahIndex].file;
+            audio.play(); isPlaying = true; updatePlayButton(); updateDownloadLink();
         }
 
         function togglePlay() {
-            if (audio.src === '') {
-                loadAndPlay();
-                return;
-            }
-            
-            if (isPlaying) {
-                audio.pause();
-            } else {
-                audio.play();
-            }
-            isPlaying = !isPlaying;
-            updatePlayButton();
+            if (!audio.src) { loadAndPlay(); return; }
+            isPlaying ? audio.pause() : audio.play();
+            isPlaying = !isPlaying; updatePlayButton();
         }
 
         function updatePlayButton() {
-            const btn = document.getElementById('play-btn');
-            btn.innerHTML = isPlaying ? '<i class="fas fa-pause-circle"></i>' : '<i class="fas fa-play-circle"></i>';
+            document.getElementById('play-btn').innerHTML = isPlaying ? '<i class="fas fa-pause-circle"></i>' : '<i class="fas fa-play-circle"></i>';
         }
 
-        function previousSurah() {
-            if (currentSurahIndex > 0) {
-                selectSurah(currentSurahIndex - 1);
-            }
-        }
-
-        function nextSurah() {
-            if (currentSurahIndex < surahs.length - 1) {
-                selectSurah(currentSurahIndex + 1);
-            }
-        }
+        function previousSurah() { if (currentSurahIndex > 0) selectSurah(currentSurahIndex - 1); }
+        function nextSurah() { if (currentSurahIndex < surahs.length - 1) selectSurah(currentSurahIndex + 1); }
 
         function updateDownloadLink() {
-            const link = document.getElementById('download-link');
-            link.href = audio.src;
-            link.download = `${surahs[currentSurahIndex].name}_${reciters[currentReciter].name}.mp3`;
+            const l = document.getElementById('download-link');
+            l.href = audio.src;
+            l.download = `${surahs[currentSurahIndex].name}_${reciters[currentReciter].name}.mp3`;
         }
 
         audio.addEventListener('timeupdate', () => {
-            const progress = (audio.currentTime / audio.duration) * 100;
-            document.getElementById('progress-fill').style.width = progress + '%';
+            document.getElementById('progress-fill').style.width = (audio.currentTime / audio.duration * 100) + '%';
             document.getElementById('current-time').textContent = formatTime(audio.currentTime);
         });
+        audio.addEventListener('loadedmetadata', () => { document.getElementById('duration').textContent = formatTime(audio.duration); });
+        audio.addEventListener('ended', () => { isPlaying = false; updatePlayButton(); });
 
-        audio.addEventListener('loadedmetadata', () => {
-            document.getElementById('duration').textContent = formatTime(audio.duration);
-        });
-
-        audio.addEventListener('ended', () => {
-            isPlaying = false;
-            updatePlayButton();
-        });
-
-        function seek(event) {
-            const progressBar = event.currentTarget;
-            const clickPosition = event.offsetX / progressBar.offsetWidth;
-            audio.currentTime = clickPosition * audio.duration;
+        function seek(e) {
+            const pct = e.offsetX / e.currentTarget.offsetWidth;
+            audio.currentTime = pct * audio.duration;
         }
 
-        function formatTime(seconds) {
-            if (isNaN(seconds)) return '00:00';
-            const mins = Math.floor(seconds / 60);
-            const secs = Math.floor(seconds % 60);
-            return `${String(mins).padStart(2, '0')}:${String(secs).padStart(2, '0')}`;
+        function formatTime(s) {
+            if (isNaN(s)) return '00:00';
+            return `${String(Math.floor(s/60)).padStart(2,'0')}:${String(Math.floor(s%60)).padStart(2,'0')}`;
         }
 
-        // بيانات الأذكار
+        // ============================================================
+        //  الأذكار
+        // ============================================================
+
         const adhkarData = {
             morning: [
                 { text: 'أَصْبَحْنَا وَأَصْبَحَ الْمُلْكُ لِلَّهِ، وَالْحَمْدُ لِلَّهِ، لَا إِلَهَ إِلَّا اللَّهُ وَحْدَهُ لَا شَرِيكَ لَهُ...', count: 1 },
@@ -1158,7 +1091,7 @@
                 { text: 'اللَّهُمَّ مَا أَصْبَحَ بِي مِنْ نِعْمَةٍ أَوْ بِأَحَدٍ مِنْ خَلْقِكَ فَمِنْكَ وَحْدَكَ لَا شَرِيكَ لَكَ، فَلَكَ الْحَمْدُ وَلَكَ الشُّكْرُ', count: 1 },
                 { text: 'اللَّهُمَّ إِنِّي أَسْأَلُكَ عِلْمًا نَافِعًا، وَرِزْقًا طَيِّبًا، وَعَمَلًا مُتَقَبَّلًا', count: 1 },
                 { text: 'أَعُوذُ بِاللَّهِ مِنَ الشَّيْطَانِ الرَّجِيمِ', count: 3 },
-                { text: 'بِسْمِ اللَّهِ الَّذِي لَا يَضُرُّ مَعَ اسْمِهِ شَيْءٌ فِي الْأَرْضِ وَلَا فِي السَّمَاءِ...', count: 3 }
+                { text: 'بِسْمِ اللَّهِ الَّذِي لَا يَضُرُّ مَعَ اسْمِهِ شَيْءٌ فِي الْأَرْضِ وَلَا فِي السَّمَاءِ وَهُوَ السَّمِيعُ الْعَلِيمُ', count: 3 }
             ],
             evening: [
                 { text: 'أَمْسَيْنَا وَأَمْسَى الْمُلْكُ لِلَّهِ، وَالْحَمْدُ لِلَّهِ، لَا إِلَهَ إِلَّا اللَّهُ وَحْدَهُ لَا شَرِيكَ لَهُ...', count: 1 },
@@ -1171,9 +1104,9 @@
                 { text: 'سُبْحَانَ اللَّهِ', count: 33 },
                 { text: 'الْحَمْدُ لِلَّهِ', count: 33 },
                 { text: 'اللَّهُ أَكْبَرُ', count: 34 },
-                { text: 'بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ * قُلْ هُوَ اللَّهُ أَحَدٌ * اللَّهُ الصَّمَدُ * لَمْ يَلِدْ وَلَمْ يُولَدْ * وَلَمْ يَكُنْ لَهُ كُفُوًا أَحَدٌ', count: 3 },
-                { text: 'بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ * قُلْ أَعُوذُ بِرَبِّ الْفَلَقِ * مِنْ شَرِّ مَا خَلَقَ...', count: 3 },
-                { text: 'بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ * قُلْ أَعُوذُ بِرَبِّ النَّاسِ * مَلِكِ النَّاسِ...', count: 3 }
+                { text: 'قُلْ هُوَ اللَّهُ أَحَدٌ * اللَّهُ الصَّمَدُ * لَمْ يَلِدْ وَلَمْ يُولَدْ * وَلَمْ يَكُنْ لَهُ كُفُوًا أَحَدٌ', count: 3 },
+                { text: 'قُلْ أَعُوذُ بِرَبِّ الْفَلَقِ * مِنْ شَرِّ مَا خَلَقَ...', count: 3 },
+                { text: 'قُلْ أَعُوذُ بِرَبِّ النَّاسِ * مَلِكِ النَّاسِ * إِلَهِ النَّاسِ...', count: 3 }
             ],
             ramadan: [
                 { text: 'اللَّهُمَّ أَعِنِّي عَلَى صِيَامِهِ وَقِيَامِهِ، وَجَنِّبْنِي فِيهِ مِنْ هَفَوَاتِي وَآثَامِي', count: 1 },
@@ -1185,52 +1118,55 @@
         };
 
         function populateAdhkar() {
-            const categories = ['morning', 'evening', 'sleep', 'ramadan'];
-            const containers = ['morning-adhkar', 'evening-adhkar', 'sleep-adhkar', 'ramadan-adhkar'];
-            
-            categories.forEach((cat, idx) => {
-                const container = document.getElementById(containers[idx]);
-                adhkarData[cat].forEach((dhikr, index) => {
+            const map = { morning: 'morning-adhkar', evening: 'evening-adhkar', sleep: 'sleep-adhkar', ramadan: 'ramadan-adhkar' };
+            for (const [cat, id] of Object.entries(map)) {
+                const container = document.getElementById(id);
+                adhkarData[cat].forEach(dhikr => {
                     const div = document.createElement('div');
                     div.className = 'bg-white/5 p-4 rounded-lg border border-white/10';
                     div.innerHTML = `
                         <p class="font-amiri text-lg mb-3 leading-relaxed">${dhikr.text}</p>
                         <div class="flex justify-between items-center">
                             <span class="text-amber-400 text-sm">التكرار: ${dhikr.count}</span>
-                            <button onclick="incrementCounter(this)" class="bg-amber-400 text-slate-900 px-4 py-1 rounded-full font-bold hover:bg-amber-500 transition">
+                            <button onclick="incrementCounter(this)" data-max="${dhikr.count}" data-current="0"
+                                class="bg-amber-400 text-slate-900 px-4 py-1 rounded-full font-bold hover:bg-amber-500 transition">
                                 0 / ${dhikr.count}
                             </button>
                         </div>
                     `;
                     container.appendChild(div);
                 });
-            });
+            }
         }
 
         function incrementCounter(btn) {
-            const max = parseInt(btn.textContent.split('/')[1]);
-            let current = parseInt(btn.textContent.split('/')[0]);
+            const max = parseInt(btn.dataset.max);
+            let current = parseInt(btn.dataset.current);
             if (current < max) {
                 current++;
+                btn.dataset.current = current;
                 btn.textContent = `${current} / ${max}`;
                 if (current === max) {
-                    btn.classList.remove('bg-amber-400', 'text-slate-900');
-                    btn.classList.add('bg-green-500', 'text-white');
+                    btn.classList.remove('bg-amber-400','text-slate-900');
+                    btn.classList.add('bg-green-500','text-white');
                 }
             }
         }
 
-        // بيانات الأدعية
+        // ============================================================
+        //  الأدعية
+        // ============================================================
+
         const duaData = [
             {
                 title: 'دعاء يوم رمضان',
                 content: 'اللَّهُمَّ أَعِنِّي عَلَى صِيَامِهِ وَقِيَامِهِ، وَجَنِّبْنِي فِيهِ مِنْ هَفَوَاتِي وَآثَامِي، وَارْزُقْنِي ذِكْرَكَ وَشُكْرَكَ بِإِحْسَانِكَ يَا هَادِيَ الْمُضِلِّينَ',
-                translation: 'اللهم أعني على صيام هذا اليوم وقيام ليله، واجعلني بعيداً عن المعاصي والذنوب، وارزقني شكر نعمك'
+                translation: 'اللهم أعني على صيام هذا اليوم وقيام ليله، واجعلني بعيداً عن المعاصي والذنوب'
             },
             {
                 title: 'دعاء الإفطار',
                 content: 'اللَّهُمَّ لَكَ صُمْتُ وَعَلَى رِزْقِكَ أَفْطَرْتُ، ذَهَبَ الظَّمَأُ وَابْتَلَّتِ الْعُرُوقُ، وَثَبَتَ الْأَجْرُ إِنْ شَاءَ اللَّهُ',
-                translation: 'اللهم بك صمت، وعلى رزقك أفطرت، وقد زال العطش ورتبت العروق بالماء، وثبت الأجر إن شاء الله'
+                translation: 'اللهم بك صمت، وعلى رزقك أفطرت، وثبت الأجر إن شاء الله'
             },
             {
                 title: 'دعاء ليلة القدر',
@@ -1240,64 +1176,65 @@
             {
                 title: 'دعاء ختم القرآن',
                 content: 'اللَّهُمَّ اجْعَلْ خَتْمَ الْقُرْآنِ لِي شَافِعًا فِي الدُّنْيَا وَالْآخِرَةِ، وَاجْعَلْهُ لِي نُورًا يَوْمَ أَلْقَاكَ، وَاجْعَلْهُ لِي شَفِيعًا مُشَفَّعًا',
-                translation: 'اللهم اجعل ختم القرآن شفيعاً لي في الدنيا والآخرة، ونوراً يوم ألقاك'
+                translation: 'اللهم اجعل ختم القرآن شفيعاً لي في الدنيا والآخرة'
             }
         ];
 
-        function showDuaModal(index) {
-            const dua = duaData[index];
+        function showDuaModal(i) {
+            const dua = duaData[i];
             document.getElementById('modal-title').textContent = dua.title;
             document.getElementById('modal-content').textContent = dua.content;
             document.getElementById('modal-translation').textContent = dua.translation;
             document.getElementById('dua-modal').classList.add('active');
         }
 
-        function closeDuaModal() {
-            document.getElementById('dua-modal').classList.remove('active');
-        }
+        function closeDuaModal() { document.getElementById('dua-modal').classList.remove('active'); }
 
-        function toggleMobileMenu() {
-            const menu = document.getElementById('mobile-menu');
-            menu.classList.toggle('translate-x-full');
-        }
+        function toggleSettings() { document.getElementById('settings-modal').classList.toggle('active'); }
+        function toggleMobileMenu() { document.getElementById('mobile-menu').classList.toggle('translate-x-full'); }
+        function scrollToSection(id) { document.getElementById(id).scrollIntoView({ behavior: 'smooth' }); }
 
-        function scrollToSection(id) {
-            document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
-        }
+        document.getElementById('dua-modal').addEventListener('click', e => { if (e.target.id === 'dua-modal') closeDuaModal(); });
+        document.getElementById('settings-modal').addEventListener('click', e => { if (e.target.id === 'settings-modal') toggleSettings(); });
 
-        document.getElementById('dua-modal').addEventListener('click', (e) => {
-            if (e.target.id === 'dua-modal') closeDuaModal();
+        document.addEventListener('keydown', e => {
+            if (e.code === 'Space' && e.target.tagName !== 'BUTTON') { e.preventDefault(); togglePlay(); }
         });
 
-        document.getElementById('settings-modal').addEventListener('click', (e) => {
-            if (e.target.id === 'settings-modal') toggleSettings();
-        });
+        // ============================================================
+        //  التهيئة الرئيسية
+        // ============================================================
 
-        window.addEventListener('DOMContentLoaded', () => {
+        window.addEventListener('DOMContentLoaded', async () => {
             createStars();
             populateSurahs();
             populateAdhkar();
-            updatePrayerCountdowns();
-            highlightCurrentPrayer();
-            
-            const savedAdhan = localStorage.getItem('adhanEnabled');
-            if (savedAdhan !== null) {
-                adhanEnabled = savedAdhan === 'true';
-                if (!adhanEnabled) {
-                    document.querySelectorAll('[id^="adhan-toggle"]').forEach(t => t.classList.remove('active'));
-                }
-            }
-            
-            setInterval(updatePrayerCountdowns, 1000);
-            setInterval(highlightCurrentPrayer, 1000);
-        });
 
-        document.addEventListener('keydown', (e) => {
-            if (e.code === 'Space' && e.target.tagName !== 'BUTTON') {
-                e.preventDefault();
-                togglePlay();
-            }
+            // إعدادات الأذان المحفوظة
+            try {
+                const saved = localStorage.getItem('adhanEnabled');
+                if (saved !== null) {
+                    adhanEnabled = saved === 'true';
+                    if (!adhanEnabled) document.querySelectorAll('[id^="adhan-toggle"]').forEach(t => t.classList.remove('active'));
+                }
+            } catch(e) {}
+
+            // جلب مواقيت الصلاة من API
+            await fetchPrayerTimes();
+
+            // تشغيل المؤقتات
+            setInterval(() => {
+                updateLiveClock();
+                updatePrayerCountdowns();
+                highlightCurrentPrayer();
+                checkDayChange();
+            }, 1000);
+
+            // تحديث أولي
+            updateLiveClock();
+            updatePrayerCountdowns();
         });
     </script>
 </body>
-    </html>
+</html>
+
