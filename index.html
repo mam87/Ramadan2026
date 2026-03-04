@@ -397,6 +397,27 @@
                     <p class="text-sm text-slate-400">يتم تحديث مواقيت الصلاة تلقائياً كل يوم من خوادم Aladhan API</p>
                     <p class="text-xs text-green-400 mt-2" id="api-status">✓ متصل بالخادم</p>
                 </div>
+                <div class="p-4 bg-blue-500/10 rounded-lg border border-blue-500/30">
+                    <h4 class="font-bold text-blue-400 mb-2"><i class="fas fa-calendar-alt ml-2"></i>تصحيح التاريخ الهجري</h4>
+                    <p class="text-sm text-slate-400 mb-3">إذا كان التاريخ الهجري غير صحيح حسب رؤية الأردن، يمكنك تعديله يدوياً:</p>
+                    <div class="flex gap-2 items-center mb-2">
+                        <label class="text-sm text-slate-300 whitespace-nowrap">اليوم:</label>
+                        <input type="number" id="hijri-day-input" min="1" max="30" class="bg-slate-800 border border-slate-600 rounded px-2 py-1 text-white text-sm w-20 text-center" placeholder="14"/>
+                        <label class="text-sm text-slate-300 whitespace-nowrap">الشهر:</label>
+                        <input type="text" id="hijri-month-input" class="bg-slate-800 border border-slate-600 rounded px-2 py-1 text-white text-sm flex-1 text-center" placeholder="رمضان"/>
+                        <label class="text-sm text-slate-300 whitespace-nowrap">السنة:</label>
+                        <input type="number" id="hijri-year-input" min="1400" max="1500" class="bg-slate-800 border border-slate-600 rounded px-2 py-1 text-white text-sm w-20 text-center" placeholder="1447"/>
+                    </div>
+                    <div class="flex gap-2 mt-2">
+                        <button onclick="applyHijriOverride()" class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg text-sm font-bold flex-1 transition">
+                            <i class="fas fa-check ml-1"></i> تطبيق
+                        </button>
+                        <button onclick="clearHijriOverride()" class="bg-slate-600 hover:bg-slate-500 text-white px-4 py-2 rounded-lg text-sm transition">
+                            <i class="fas fa-undo"></i>
+                        </button>
+                    </div>
+                    <p class="text-xs text-blue-300 mt-2" id="hijri-override-status"></p>
+                </div>
             </div>
         </div>
     </div>
@@ -699,6 +720,45 @@
         // ============================================================
 
         let prayerTimes = null; // سيُملأ من API
+        let hijriOverride = null;
+
+        function applyHijriOverride() {
+            const day   = document.getElementById('hijri-day-input').value.trim();
+            const month = document.getElementById('hijri-month-input').value.trim();
+            const year  = document.getElementById('hijri-year-input').value.trim();
+            if (!day || !month || !year) {
+                document.getElementById('hijri-override-status').textContent = '⚠ يرجى ملء جميع الحقول';
+                return;
+            }
+            hijriOverride = { day, month, year };
+            try { localStorage.setItem('hijriOverride', JSON.stringify(hijriOverride)); } catch(e) {}
+            const hijriStr = `${day} ${month} ${year} هـ`;
+            document.getElementById('current-date-hijri').textContent = hijriStr;
+            const greg = document.getElementById('current-date-gregorian').textContent;
+            document.getElementById('prayer-date-subtitle').textContent = `${greg} | ${hijriStr}`;
+            document.getElementById('hijri-override-status').textContent = `✓ تم تطبيق: ${hijriStr}`;
+        }
+
+        function clearHijriOverride() {
+            hijriOverride = null;
+            try { localStorage.removeItem('hijriOverride'); } catch(e) {}
+            document.getElementById('hijri-override-status').textContent = 'تمت الإزالة — سيُستخدم تاريخ API';
+            fetchPrayerTimes();
+        }
+
+        function loadHijriOverride() {
+            try {
+                const saved = localStorage.getItem('hijriOverride');
+                if (saved) {
+                    hijriOverride = JSON.parse(saved);
+                    document.getElementById('hijri-day-input').value   = hijriOverride.day;
+                    document.getElementById('hijri-month-input').value = hijriOverride.month;
+                    document.getElementById('hijri-year-input').value  = hijriOverride.year;
+                    document.getElementById('hijri-override-status').textContent = `✓ محفوظ: ${hijriOverride.day} ${hijriOverride.month} ${hijriOverride.year} هـ`;
+                }
+            } catch(e) {}
+        }
+
         let adhanEnabled = true;
         let adhanAudio = null;
         let lastPlayedPrayer = null;
@@ -793,7 +853,9 @@
 
         function updateDateDisplay(jd, hijri) {
             const gregorianStr = formatGregorianDate(jd);
-            const hijriStr = `${hijri.day} ${hijri.month.ar} ${hijri.year} هـ`;
+            const hijriStr = hijriOverride
+                ? `${hijriOverride.day} ${hijriOverride.month} ${hijriOverride.year} هـ`
+                : `${hijri.day} ${hijri.month.ar} ${hijri.year} هـ`;
 
             document.getElementById('current-date-gregorian').textContent = gregorianStr;
             document.getElementById('current-date-hijri').textContent = hijriStr;
@@ -1218,6 +1280,9 @@
                     if (!adhanEnabled) document.querySelectorAll('[id^="adhan-toggle"]').forEach(t => t.classList.remove('active'));
                 }
             } catch(e) {}
+
+            // تحميل التصحيح اليدوي للتاريخ الهجري إن وُجد
+            loadHijriOverride();
 
             // جلب مواقيت الصلاة من API
             await fetchPrayerTimes();
